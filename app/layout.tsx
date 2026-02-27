@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   },
   description: "Track your habits. Build streaks. Stay consistent.",
   metadataBase: new URL(process.env.NEXTAUTH_URL || "http://localhost:3000"),
+  icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Streaks — Habit Tracker",
     description: "Track your habits. Build streaks. Stay consistent.",
