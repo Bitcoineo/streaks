@@ -144,20 +144,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 px-8 py-16 text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Ready to build your streaks?
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-stone-600">
-            Start tracking your habits today. It&apos;s free and takes less than a minute to set up.
-          </p>
-          <Link href="/auth/signup" className="btn-primary mt-8 inline-block px-8 py-3 text-base">
-            Get Started Free
-          </Link>
-        </div>
-      </section>
+
     </div>
   );
 }
