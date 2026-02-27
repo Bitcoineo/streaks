@@ -56,7 +56,7 @@ export default function SignUpForm() {
       <button
         type="button"
         onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-        className="flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 transition-colors"
+        className="flex w-full items-center justify-center gap-2 rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-sm font-medium text-stone-700 shadow-sm hover:bg-stone-50 dark:border-stone-700 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700 transition-colors"
       >
         <svg className="h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -81,16 +81,16 @@ export default function SignUpForm() {
 
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-zinc-300 dark:border-zinc-700" />
+          <div className="w-full border-t border-stone-200 dark:border-stone-700" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-zinc-500">or</span>
+          <span className="bg-white px-2 text-stone-400 dark:bg-stone-900 dark:text-stone-500">or</span>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+          <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
             {error}
           </div>
         )}
@@ -105,7 +105,7 @@ export default function SignUpForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:focus:border-zinc-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
             placeholder="Your name"
           />
         </div>
@@ -120,7 +120,7 @@ export default function SignUpForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:focus:border-zinc-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
             placeholder="you@example.com"
           />
         </div>
@@ -139,7 +139,7 @@ export default function SignUpForm() {
             minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:focus:border-zinc-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
             placeholder="At least 8 characters"
           />
         </div>
@@ -147,17 +147,17 @@ export default function SignUpForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300 transition-colors"
+          className="btn-primary w-full py-2.5 disabled:opacity-50"
         >
           {loading ? "Creating account..." : "Create account"}
         </button>
       </form>
 
-      <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-center text-sm text-stone-500 dark:text-stone-400">
         Already have an account?{" "}
         <Link
           href="/auth/signin"
-          className="font-medium text-zinc-900 hover:underline dark:text-zinc-100"
+          className="font-medium text-amber-600 hover:text-amber-500 dark:text-amber-400"
         >
           Sign in
         </Link>

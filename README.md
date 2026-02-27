@@ -1,6 +1,10 @@
 # Streaks — Habit Tracker
 
-A daily habit tracker built with Next.js 14. Create habits, check them off each day, and watch your streaks grow.
+A beautiful, modern habit tracker that helps you build consistency. Create habits, check them off each day, and watch your streaks grow.
+
+**Live:** [streaks-bitcoineo.vercel.app](https://streaks-bitcoineo.vercel.app)
+
+![Screenshot](screenshot.png)
 
 ## Features
 
@@ -13,11 +17,12 @@ A daily habit tracker built with Next.js 14. Create habits, check them off each 
 - **Dark mode** — toggle or follow system preference
 - **Settings page** — edit display name, view account type
 - **Data isolation** — each user only sees their own data
+- **Premium SaaS UI** — glassmorphism header, gradient backgrounds, shadow cards, smooth animations
 
 ## Tech Stack
 
 - **Framework**: Next.js 14 (App Router, TypeScript, strict mode)
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS (class-based dark mode)
 - **ORM**: Drizzle ORM
 - **Database**: Turso / libSQL (SQLite)
 - **Auth**: Auth.js v5 (JWT sessions, Credentials + Google OAuth)
@@ -101,8 +106,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 app/
-  layout.tsx                          # Root layout: header, theme, auth state
-  page.tsx                            # Landing page (public)
+  layout.tsx                          # Root layout: glassmorphism header, theme, auth state
+  page.tsx                            # Landing page (hero, features, preview, CTA)
   auth/
     signin/page.tsx                   # Sign in page
     signup/page.tsx                   # Sign up page

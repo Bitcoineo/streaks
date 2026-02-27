@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffbf5;
+  --foreground: #1c1917;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #1c1917;
+  --foreground: #e7e5e4;
 }
 
 body {
@@ -17,3 +17,31 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-sm border border-stone-100
+      dark:bg-stone-900 dark:border-stone-800;
+  }
+
+  .btn-primary {
+    @apply rounded-full bg-amber-500 px-6 py-2.5 text-sm font-semibold text-white
+      shadow-lg shadow-amber-500/25 transition-all
+      hover:bg-amber-600 hover:shadow-xl hover:shadow-amber-500/30
+      active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply rounded-full border border-stone-200 bg-white px-6 py-2.5 text-sm font-semibold text-stone-700
+      transition-all hover:bg-stone-50
+      dark:border-stone-700 dark:bg-stone-900 dark:text-stone-300 dark:hover:bg-stone-800;
+  }
+}
+
+/* Staggered fade-in-up animation delays */
+.delay-0 { animation-delay: 0ms; }
+.delay-1 { animation-delay: 100ms; }
+.delay-2 { animation-delay: 200ms; }
+.delay-3 { animation-delay: 300ms; }
+.delay-4 { animation-delay: 400ms; }
+.delay-5 { animation-delay: 500ms; }

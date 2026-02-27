@@ -44,12 +44,12 @@ export default function SettingsForm({ initialName, email }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && (
-        <div className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
           {error}
         </div>
       )}
       {message && (
-        <div className="rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400">
+        <div className="rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400">
           {message}
         </div>
       )}
@@ -64,7 +64,7 @@ export default function SettingsForm({ initialName, email }: Props) {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:focus:border-zinc-500"
+          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
         />
       </div>
 
@@ -74,15 +74,15 @@ export default function SettingsForm({ initialName, email }: Props) {
           type="email"
           disabled
           value={email}
-          className="w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-500"
+          className="w-full rounded-xl border border-stone-100 bg-stone-50 px-3.5 py-2.5 text-sm text-stone-500 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-500"
         />
-        <p className="mt-1 text-xs text-zinc-400">Email cannot be changed</p>
+        <p className="mt-1 text-xs text-stone-400">Email cannot be changed</p>
       </div>
 
       <button
         type="submit"
         disabled={loading || name.trim() === initialName}
-        className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300 transition-colors"
+        className="btn-primary disabled:opacity-50"
       >
         {loading ? "Saving..." : "Save changes"}
       </button>

@@ -29,19 +29,19 @@ export default function StatsOverview({
   );
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Summary cards */}
-      <div className="grid grid-cols-2 gap-3">
-        <div className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="text-2xl font-bold">
+      <div className="grid grid-cols-2 gap-4">
+        <div className="card p-5">
+          <div className="text-2xl font-extrabold">
             {completedToday}/{totalHabits}
           </div>
-          <div className="text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="text-sm text-stone-500 dark:text-stone-400">
             completed today
           </div>
         </div>
-        <div className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="text-2xl font-bold">
+        <div className="card p-5">
+          <div className="text-2xl font-extrabold">
             {bestStreak.streak > 0 ? (
               <span>
                 🔥 {bestStreak.streak}d
@@ -50,7 +50,7 @@ export default function StatsOverview({
               "—"
             )}
           </div>
-          <div className="text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="text-sm text-stone-500 dark:text-stone-400">
             {bestStreak.streak > 0
               ? `best streak (${bestStreak.emoji} ${bestStreak.name})`
               : "best streak"}
@@ -59,9 +59,9 @@ export default function StatsOverview({
       </div>
 
       {/* Per-habit bars */}
-      <div className="space-y-3">
+      <div className="card p-5 space-y-4">
         {stats.map((s) => (
-          <div key={s.habitId} className="space-y-1">
+          <div key={s.habitId} className="space-y-1.5">
             <div className="flex items-center justify-between text-sm">
               <span>
                 {s.habitEmoji} {s.habitName}
@@ -71,13 +71,13 @@ export default function StatsOverview({
                   </span>
                 )}
               </span>
-              <span className="text-zinc-500 dark:text-zinc-400">
+              <span className="text-stone-500 dark:text-stone-400">
                 {s.completionRate7d}%
               </span>
             </div>
-            <div className="h-2 rounded-full bg-zinc-100 dark:bg-zinc-800">
+            <div className="h-2.5 rounded-full bg-stone-100 dark:bg-stone-800">
               <div
-                className="h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 transition-all"
+                className="h-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400 transition-all"
                 style={{ width: `${s.completionRate7d}%` }}
               />
             </div>

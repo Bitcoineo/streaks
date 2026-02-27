@@ -53,7 +53,7 @@ export default function AddHabitForm() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-zinc-300 px-4 py-3 text-sm font-medium text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-300 transition-colors"
+        className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-stone-300 px-4 py-3.5 text-sm font-medium text-stone-500 hover:border-amber-400 hover:text-amber-600 dark:border-stone-700 dark:text-stone-400 dark:hover:border-amber-600 dark:hover:text-amber-400 transition-colors"
       >
         <svg
           className="h-4 w-4"
@@ -76,16 +76,16 @@ export default function AddHabitForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900"
+      className="card p-5"
     >
       {error && (
-        <div className="mb-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="mb-3 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
           {error}
         </div>
       )}
 
       <div className="mb-3">
-        <label htmlFor="habit-name" className="block text-sm font-medium mb-1">
+        <label htmlFor="habit-name" className="block text-sm font-medium mb-1.5">
           Habit name
         </label>
         <input
@@ -95,23 +95,23 @@ export default function AddHabitForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Morning run"
-          className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:focus:border-zinc-500"
+          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
           autoFocus
         />
       </div>
 
       <div className="mb-3">
-        <label className="block text-sm font-medium mb-1">Emoji</label>
+        <label className="block text-sm font-medium mb-1.5">Emoji</label>
         <div className="flex flex-wrap gap-1">
           {EMOJI_OPTIONS.map((e) => (
             <button
               key={e}
               type="button"
               onClick={() => setEmoji(e)}
-              className={`flex h-9 w-9 items-center justify-center rounded-md text-lg transition-colors ${
+              className={`flex h-9 w-9 items-center justify-center rounded-xl text-lg transition-colors ${
                 emoji === e
-                  ? "bg-zinc-200 dark:bg-zinc-700"
-                  : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                  ? "bg-amber-100 ring-2 ring-amber-500/30 dark:bg-amber-950/50"
+                  : "hover:bg-stone-100 dark:hover:bg-stone-800"
               }`}
             >
               {e}
@@ -121,17 +121,17 @@ export default function AddHabitForm() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Frequency</label>
+        <label className="block text-sm font-medium mb-1.5">Frequency</label>
         <div className="flex gap-2">
           {(["daily", "weekly"] as const).map((f) => (
             <button
               key={f}
               type="button"
               onClick={() => setFrequency(f)}
-              className={`rounded-md px-3 py-1.5 text-sm font-medium capitalize transition-colors ${
+              className={`rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-all ${
                 frequency === f
-                  ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-                  : "border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                  ? "bg-amber-500 text-white shadow-sm"
+                  : "border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800"
               }`}
             >
               {f}
@@ -144,7 +144,7 @@ export default function AddHabitForm() {
         <button
           type="submit"
           disabled={loading || !name.trim()}
-          className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300 transition-colors"
+          className="btn-primary disabled:opacity-50"
         >
           {loading ? "Creating..." : "Create habit"}
         </button>
@@ -154,7 +154,7 @@ export default function AddHabitForm() {
             setOpen(false);
             setError("");
           }}
-          className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-colors"
+          className="rounded-full px-5 py-2.5 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-stone-800 transition-colors"
         >
           Cancel
         </button>

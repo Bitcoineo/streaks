@@ -63,25 +63,27 @@ export default async function DashboardPage() {
   });
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8">
-      <div className="mb-8 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight">{dateStr}</h1>
+    <div className="relative mx-auto max-w-3xl px-4 py-10">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 to-transparent dark:from-amber-950/10 dark:to-transparent" />
+
+      <div className="mb-10">
+        <h1 className="text-3xl font-extrabold tracking-tight">{dateStr}</h1>
       </div>
 
       {habits.length === 0 ? (
         <div className="space-y-6">
-          <div className="rounded-xl border border-dashed border-zinc-300 dark:border-zinc-700 p-12 text-center">
-            <p className="text-lg text-zinc-500 dark:text-zinc-400">
+          <div className="card border-dashed p-12 text-center">
+            <p className="text-lg text-stone-500 dark:text-stone-400">
               No habits yet — create your first one!
             </p>
           </div>
           <AddHabitForm />
         </div>
       ) : (
-        <div className="space-y-8">
+        <div className="space-y-10">
           <section>
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Today&apos;s Habits</h2>
+              <h2 className="text-lg font-bold">Today&apos;s Habits</h2>
             </div>
             <HabitList
               habits={serializedHabits}
@@ -95,7 +97,7 @@ export default async function DashboardPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-lg font-semibold">Stats</h2>
+            <h2 className="mb-4 text-lg font-bold">Stats</h2>
             <StatsOverview
               stats={serializedStats}
               todayCompletedIds={todayCompletedIds}
@@ -104,7 +106,7 @@ export default async function DashboardPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-lg font-semibold">This Week</h2>
+            <h2 className="mb-4 text-lg font-bold">This Week</h2>
             <WeekView
               habits={serializedHabits}
               completions={serializedCompletions}

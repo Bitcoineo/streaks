@@ -80,9 +80,9 @@ export default function HabitList({
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       {error && (
-        <div className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
           {error}
         </div>
       )}
@@ -93,10 +93,10 @@ export default function HabitList({
         return (
           <div
             key={habit.id}
-            className={`flex items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${
+            className={`card flex items-center gap-3 px-4 py-3.5 transition-all ${
               completed
-                ? "border-emerald-200 bg-emerald-50 dark:border-emerald-900 dark:bg-emerald-950/30"
-                : "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+                ? "!border-emerald-200 !bg-emerald-50 dark:!border-emerald-900 dark:!bg-emerald-950/30"
+                : ""
             }`}
           >
             <span className="text-xl">{habit.emoji}</span>
@@ -120,10 +120,10 @@ export default function HabitList({
             <button
               onClick={() => toggle(habit.id)}
               disabled={pending[habit.id]}
-              className={`flex h-7 w-7 items-center justify-center rounded-md border transition-colors ${
+              className={`flex h-8 w-8 items-center justify-center rounded-xl border transition-all ${
                 completed
                   ? "border-emerald-400 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
-                  : "border-zinc-300 hover:border-zinc-400 dark:border-zinc-600 dark:hover:border-zinc-500"
+                  : "border-stone-300 hover:border-stone-400 dark:border-stone-600 dark:hover:border-stone-500"
               } ${pending[habit.id] ? "opacity-50" : ""}`}
               aria-label={
                 completed ? `Uncheck ${habit.name}` : `Check ${habit.name}`

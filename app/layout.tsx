@@ -56,22 +56,23 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <header className="border-b border-zinc-200 dark:border-zinc-800">
-          <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
+        <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-stone-950/70 border-b border-stone-200/50 dark:border-stone-800/50">
+          <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight"
+              className="flex items-center gap-1.5 text-lg font-bold tracking-tight"
             >
-              Streaks
+              <span>🔥</span>
+              <span>Streaks</span>
             </Link>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <ThemeToggle />
               {session?.user ? (
                 <>
                   <Link
                     href="/dashboard/settings"
-                    className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+                    className="text-sm text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-colors"
                   >
                     {session.user.name || session.user.email}
                   </Link>
@@ -83,7 +84,7 @@ export default async function RootLayout({
                   >
                     <button
                       type="submit"
-                      className="rounded-md px-3 py-1.5 text-sm font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors"
+                      className="rounded-full px-4 py-1.5 text-sm font-medium text-stone-600 hover:bg-stone-100 hover:text-stone-900 dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-stone-100 transition-colors"
                     >
                       Sign out
                     </button>
@@ -92,7 +93,7 @@ export default async function RootLayout({
               ) : (
                 <Link
                   href="/auth/signin"
-                  className="rounded-md px-3 py-1.5 text-sm font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors"
+                  className="btn-primary !px-4 !py-1.5 !text-sm"
                 >
                   Sign in
                 </Link>
