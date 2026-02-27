@@ -51,8 +51,8 @@ export default function WeekView({ habits, completions }: Props) {
               key={d.date}
               className={`text-center text-xs font-medium ${
                 d.date === today
-                  ? "text-amber-600 dark:text-amber-400"
-                  : "text-stone-400 dark:text-stone-500"
+                  ? "text-amber-600"
+                  : "text-stone-400"
               }`}
             >
               {d.label}
@@ -69,7 +69,7 @@ export default function WeekView({ habits, completions }: Props) {
           >
             <div className="flex items-center gap-1.5 truncate text-sm">
               <span>{habit.emoji}</span>
-              <span className="truncate text-stone-600 dark:text-stone-400">
+              <span className="truncate text-stone-600">
                 {habit.name}
               </span>
             </div>
@@ -80,9 +80,9 @@ export default function WeekView({ habits, completions }: Props) {
                   <div
                     className={`h-7 w-7 rounded-xl ${
                       done
-                        ? "bg-emerald-500 dark:bg-emerald-400"
-                        : "bg-stone-100 dark:bg-stone-800"
-                    } ${d.date === today ? "ring-2 ring-amber-400/50 dark:ring-amber-500/30" : ""}`}
+                        ? "bg-emerald-500"
+                        : "bg-stone-100"
+                    } ${d.date === today ? "ring-2 ring-amber-400/50" : ""}`}
                   />
                 </div>
               );

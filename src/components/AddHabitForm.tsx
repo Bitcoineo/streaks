@@ -53,7 +53,7 @@ export default function AddHabitForm() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-stone-300 px-4 py-3.5 text-sm font-medium text-stone-500 hover:border-amber-400 hover:text-amber-600 dark:border-stone-700 dark:text-stone-400 dark:hover:border-amber-600 dark:hover:text-amber-400 transition-colors"
+        className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-stone-300 px-4 py-3.5 text-sm font-medium text-stone-500 hover:border-amber-400 hover:text-amber-600 transition-colors"
       >
         <svg
           className="h-4 w-4"
@@ -79,7 +79,7 @@ export default function AddHabitForm() {
       className="card p-5"
     >
       {error && (
-        <div className="mb-3 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="mb-3 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">
           {error}
         </div>
       )}
@@ -95,7 +95,7 @@ export default function AddHabitForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Morning run"
-          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
+          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
           autoFocus
         />
       </div>
@@ -110,8 +110,8 @@ export default function AddHabitForm() {
               onClick={() => setEmoji(e)}
               className={`flex h-9 w-9 items-center justify-center rounded-xl text-lg transition-colors ${
                 emoji === e
-                  ? "bg-amber-100 ring-2 ring-amber-500/30 dark:bg-amber-950/50"
-                  : "hover:bg-stone-100 dark:hover:bg-stone-800"
+                  ? "bg-amber-100 ring-2 ring-amber-500/30"
+                  : "hover:bg-stone-100"
               }`}
             >
               {e}
@@ -131,7 +131,7 @@ export default function AddHabitForm() {
               className={`rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-all ${
                 frequency === f
                   ? "bg-amber-500 text-white shadow-sm"
-                  : "border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800"
+                  : "border border-stone-200 hover:bg-stone-100"
               }`}
             >
               {f}
@@ -154,7 +154,7 @@ export default function AddHabitForm() {
             setOpen(false);
             setError("");
           }}
-          className="rounded-full px-5 py-2.5 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-stone-800 transition-colors"
+          className="rounded-full px-5 py-2.5 text-sm font-medium text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Cancel
         </button>

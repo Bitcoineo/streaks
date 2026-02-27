@@ -7,7 +7,7 @@ const features = [
   { emoji: "✅", title: "Daily Check-ins", description: "One tap to mark a habit complete. Simple and satisfying." },
   { emoji: "📊", title: "Visual Progress", description: "See your week at a glance with a clean completion grid." },
   { emoji: "🎯", title: "Stay Focused", description: "Track only what matters. No clutter, no distractions." },
-  { emoji: "🌙", title: "Dark Mode", description: "Easy on the eyes, day or night. Follows your system preference." },
+  { emoji: "📱", title: "Clean Design", description: "A beautiful, minimal interface that stays out of your way." },
   { emoji: "🔒", title: "Private & Secure", description: "Your data is yours. Fully authenticated, fully isolated." },
 ];
 
@@ -27,12 +27,12 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative px-4 pb-24 pt-20 md:pb-32 md:pt-28">
         {/* Background gradient */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/80 via-orange-50/40 to-transparent dark:from-amber-950/20 dark:via-orange-950/10 dark:to-transparent" />
-        <div className="absolute top-20 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-amber-200/30 blur-3xl dark:bg-amber-900/20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/80 via-orange-50/40 to-transparent" />
+        <div className="absolute top-20 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-amber-200/30 blur-3xl" />
 
         <div className="mx-auto max-w-4xl text-center">
           <div className="opacity-0 animate-fade-in-up delay-0">
-            <span className="inline-block rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-medium text-amber-700 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-400">
+            <span className="inline-block rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-medium text-amber-700">
               Track habits, build streaks
             </span>
           </div>
@@ -44,7 +44,7 @@ export default async function Home() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-stone-600 dark:text-stone-400 opacity-0 animate-fade-in-up delay-2">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-stone-600 opacity-0 animate-fade-in-up delay-2">
             A simple, beautiful habit tracker that helps you stay consistent.
             Check off your daily habits, watch your streaks grow, and see your
             progress over time.
@@ -69,7 +69,7 @@ export default async function Home() {
               Everything you need to{" "}
               <span className="text-amber-500">stay on track</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-stone-600 dark:text-stone-400">
+            <p className="mx-auto mt-4 max-w-2xl text-stone-600">
               Simple tools that make habit tracking effortless and rewarding.
             </p>
           </div>
@@ -77,11 +77,11 @@ export default async function Home() {
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.title} className="card p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl dark:bg-amber-950/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl">
                   {feature.emoji}
                 </div>
                 <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-                <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+                <p className="mt-2 text-sm text-stone-600">
                   {feature.description}
                 </p>
               </div>
@@ -97,12 +97,12 @@ export default async function Home() {
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               Your habits, at a glance
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-stone-600 dark:text-stone-400">
+            <p className="mx-auto mt-4 max-w-xl text-stone-600">
               A clean dashboard that shows you exactly where you stand.
             </p>
           </div>
 
-          <div className="mt-12 rounded-2xl border border-stone-200/60 bg-white p-6 shadow-xl shadow-stone-200/50 dark:border-stone-800 dark:bg-stone-900 dark:shadow-none">
+          <div className="mt-12 rounded-2xl border border-stone-200/60 bg-white p-6 shadow-xl shadow-stone-200/50">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-lg font-bold">Today&apos;s Habits</h3>
               <span className="text-sm text-stone-500">3 of 4 done</span>
@@ -113,12 +113,12 @@ export default async function Home() {
                   key={habit.name}
                   className={`flex items-center gap-3 rounded-xl px-4 py-3 ${
                     habit.done
-                      ? "bg-emerald-50 dark:bg-emerald-950/30"
-                      : "bg-stone-50 dark:bg-stone-800/50"
+                      ? "bg-emerald-50"
+                      : "bg-stone-50"
                   }`}
                 >
                   <span className="text-xl">{habit.emoji}</span>
-                  <span className={`flex-1 font-medium ${habit.done ? "text-emerald-700 dark:text-emerald-400" : ""}`}>
+                  <span className={`flex-1 font-medium ${habit.done ? "text-emerald-700" : ""}`}>
                     {habit.name}
                   </span>
                   <span className="flex items-center gap-1 text-sm text-orange-500">
@@ -128,7 +128,7 @@ export default async function Home() {
                     className={`flex h-7 w-7 items-center justify-center rounded-lg ${
                       habit.done
                         ? "bg-emerald-500 text-white"
-                        : "border border-stone-300 dark:border-stone-600"
+                        : "border border-stone-300"
                     }`}
                   >
                     {habit.done && (
@@ -146,11 +146,11 @@ export default async function Home() {
 
       {/* Final CTA */}
       <section className="px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 px-8 py-16 text-center dark:from-amber-950/30 dark:to-orange-950/20">
+        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 px-8 py-16 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Ready to build your streaks?
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-stone-600 dark:text-stone-400">
+          <p className="mx-auto mt-4 max-w-md text-stone-600">
             Start tracking your habits today. It&apos;s free and takes less than a minute to set up.
           </p>
           <Link href="/auth/signup" className="btn-primary mt-8 inline-block px-8 py-3 text-base">

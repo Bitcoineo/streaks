@@ -36,7 +36,7 @@ export default function StatsOverview({
           <div className="text-2xl font-extrabold">
             {completedToday}/{totalHabits}
           </div>
-          <div className="text-sm text-stone-500 dark:text-stone-400">
+          <div className="text-sm text-stone-500">
             completed today
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function StatsOverview({
               "—"
             )}
           </div>
-          <div className="text-sm text-stone-500 dark:text-stone-400">
+          <div className="text-sm text-stone-500">
             {bestStreak.streak > 0
               ? `best streak (${bestStreak.emoji} ${bestStreak.name})`
               : "best streak"}
@@ -66,18 +66,18 @@ export default function StatsOverview({
               <span>
                 {s.habitEmoji} {s.habitName}
                 {s.currentStreak > 0 && (
-                  <span className="ml-2 text-orange-500 dark:text-orange-400">
+                  <span className="ml-2 text-orange-500">
                     🔥 {s.currentStreak}d
                   </span>
                 )}
               </span>
-              <span className="text-stone-500 dark:text-stone-400">
+              <span className="text-stone-500">
                 {s.completionRate7d}%
               </span>
             </div>
-            <div className="h-2.5 rounded-full bg-stone-100 dark:bg-stone-800">
+            <div className="h-2.5 rounded-full bg-stone-100">
               <div
-                className="h-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400 transition-all"
+                className="h-2.5 rounded-full bg-emerald-500 transition-all"
                 style={{ width: `${s.completionRate7d}%` }}
               />
             </div>

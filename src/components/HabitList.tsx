@@ -82,7 +82,7 @@ export default function HabitList({
   return (
     <div className="space-y-3">
       {error && (
-        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">
           {error}
         </div>
       )}
@@ -95,7 +95,7 @@ export default function HabitList({
             key={habit.id}
             className={`card flex items-center gap-3 px-4 py-3.5 transition-all ${
               completed
-                ? "!border-emerald-200 !bg-emerald-50 dark:!border-emerald-900 dark:!bg-emerald-950/30"
+                ? "!border-emerald-200 !bg-emerald-50"
                 : ""
             }`}
           >
@@ -103,7 +103,7 @@ export default function HabitList({
             <span
               className={`flex-1 font-medium ${
                 completed
-                  ? "text-emerald-700 dark:text-emerald-400"
+                  ? "text-emerald-700"
                   : ""
               }`}
             >
@@ -111,7 +111,7 @@ export default function HabitList({
             </span>
 
             {streak > 0 && (
-              <span className="flex items-center gap-1 text-sm text-orange-500 dark:text-orange-400">
+              <span className="flex items-center gap-1 text-sm text-orange-500">
                 <span>🔥</span>
                 <span>{streak}d</span>
               </span>
@@ -122,8 +122,8 @@ export default function HabitList({
               disabled={pending[habit.id]}
               className={`flex h-8 w-8 items-center justify-center rounded-xl border transition-all ${
                 completed
-                  ? "border-emerald-400 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
-                  : "border-stone-300 hover:border-stone-400 dark:border-stone-600 dark:hover:border-stone-500"
+                  ? "border-emerald-400 bg-emerald-500 text-white"
+                  : "border-stone-300 hover:border-stone-400"
               } ${pending[habit.id] ? "opacity-50" : ""}`}
               aria-label={
                 completed ? `Uncheck ${habit.name}` : `Check ${habit.name}`

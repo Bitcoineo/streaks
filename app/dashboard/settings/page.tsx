@@ -22,7 +22,7 @@ export default async function SettingsPage() {
 
   return (
     <div className="relative mx-auto max-w-lg px-4 py-10">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 to-transparent dark:from-amber-950/10 dark:to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 to-transparent" />
 
       <h1 className="mb-8 text-3xl font-extrabold tracking-tight">Settings</h1>
 
@@ -39,13 +39,13 @@ export default async function SettingsPage() {
           <h2 className="mb-4 text-lg font-bold">Account</h2>
           <div className="space-y-3">
             <div>
-              <span className="text-sm text-stone-500 dark:text-stone-400">
+              <span className="text-sm text-stone-500">
                 Account type
               </span>
               <p className="font-medium">{accountType}</p>
             </div>
             <div>
-              <span className="text-sm text-stone-500 dark:text-stone-400">
+              <span className="text-sm text-stone-500">
                 Email
               </span>
               <p className="font-medium">

@@ -64,7 +64,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="relative mx-auto max-w-3xl px-4 py-10">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 to-transparent dark:from-amber-950/10 dark:to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/40 to-transparent" />
 
       <div className="mb-10">
         <h1 className="text-3xl font-extrabold tracking-tight">{dateStr}</h1>
@@ -73,7 +73,7 @@ export default async function DashboardPage() {
       {habits.length === 0 ? (
         <div className="space-y-6">
           <div className="card border-dashed p-12 text-center">
-            <p className="text-lg text-stone-500 dark:text-stone-400">
+            <p className="text-lg text-stone-500">
               No habits yet — create your first one!
             </p>
           </div>

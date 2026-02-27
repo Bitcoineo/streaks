@@ -44,12 +44,12 @@ export default function SettingsForm({ initialName, email }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && (
-        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">
           {error}
         </div>
       )}
       {message && (
-        <div className="rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400">
+        <div className="rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
           {message}
         </div>
       )}
@@ -64,7 +64,7 @@ export default function SettingsForm({ initialName, email }: Props) {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
+          className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
         />
       </div>
 
@@ -74,7 +74,7 @@ export default function SettingsForm({ initialName, email }: Props) {
           type="email"
           disabled
           value={email}
-          className="w-full rounded-xl border border-stone-100 bg-stone-50 px-3.5 py-2.5 text-sm text-stone-500 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-500"
+          className="w-full rounded-xl border border-stone-100 bg-stone-50 px-3.5 py-2.5 text-sm text-stone-500"
         />
         <p className="mt-1 text-xs text-stone-400">Email cannot be changed</p>
       </div>

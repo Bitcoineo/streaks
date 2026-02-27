@@ -56,7 +56,7 @@ export default function SignUpForm() {
       <button
         type="button"
         onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-        className="flex w-full items-center justify-center gap-2 rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-sm font-medium text-stone-700 shadow-sm hover:bg-stone-50 dark:border-stone-700 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700 transition-colors"
+        className="flex w-full items-center justify-center gap-2 rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-sm font-medium text-stone-700 shadow-sm hover:bg-stone-50 transition-colors"
       >
         <svg className="h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -81,16 +81,16 @@ export default function SignUpForm() {
 
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-stone-200 dark:border-stone-700" />
+          <div className="w-full border-t border-stone-200" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-stone-400 dark:bg-stone-900 dark:text-stone-500">or</span>
+          <span className="bg-white px-2 text-stone-400">or</span>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+          <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">
             {error}
           </div>
         )}
@@ -105,7 +105,7 @@ export default function SignUpForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
             placeholder="Your name"
           />
         </div>
@@ -120,7 +120,7 @@ export default function SignUpForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
             placeholder="you@example.com"
           />
         </div>
@@ -139,7 +139,7 @@ export default function SignUpForm() {
             minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 dark:border-stone-700 dark:bg-stone-800 dark:focus:border-amber-500"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
             placeholder="At least 8 characters"
           />
         </div>
@@ -153,11 +153,11 @@ export default function SignUpForm() {
         </button>
       </form>
 
-      <p className="text-center text-sm text-stone-500 dark:text-stone-400">
+      <p className="text-center text-sm text-stone-500">
         Already have an account?{" "}
         <Link
           href="/auth/signin"
-          className="font-medium text-amber-600 hover:text-amber-500 dark:text-amber-400"
+          className="font-medium text-amber-600 hover:text-amber-500"
         >
           Sign in
         </Link>
