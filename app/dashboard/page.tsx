@@ -2,20 +2,11 @@ import { auth } from "@/src/auth";
 import { getHabits } from "@/src/lib/habits";
 import { getDashboardStats } from "@/src/lib/stats";
 import { getCompletions } from "@/src/lib/completions";
+import { toISODate, addDays } from "@/src/lib/date-utils";
 import HabitList from "@/src/components/HabitList";
 import AddHabitForm from "@/src/components/AddHabitForm";
 import StatsOverview from "@/src/components/StatsOverview";
 import WeekView from "@/src/components/WeekView";
-
-function toISODate(date: Date): string {
-  return date.toISOString().split("T")[0];
-}
-
-function addDays(date: Date, days: number): Date {
-  const d = new Date(date);
-  d.setDate(d.getDate() + days);
-  return d;
-}
 
 export default async function DashboardPage() {
   const session = await auth();

@@ -2,8 +2,7 @@ import { eq, and, gte, lte } from "drizzle-orm";
 import { db } from "@/src/db";
 import { completions } from "@/src/db/schema";
 import { getHabitById } from "./habits";
-
-type Result<T> = { data: T; error?: never } | { data?: never; error: string };
+import type { Result } from "./types";
 
 export async function toggleCompletion(
   userId: string,
@@ -48,26 +47,6 @@ export async function getCompletions(
     .where(
       and(
         eq(completions.userId, userId),
-        gte(completions.completedDate, startDate),
-        lte(completions.completedDate, endDate)
-      )
-    )
-    .all();
-}
-
-export async function getCompletionsByHabit(
-  userId: string,
-  habitId: string,
-  startDate: string,
-  endDate: string
-) {
-  return db
-    .select()
-    .from(completions)
-    .where(
-      and(
-        eq(completions.userId, userId),
-        eq(completions.habitId, habitId),
         gte(completions.completedDate, startDate),
         lte(completions.completedDate, endDate)
       )

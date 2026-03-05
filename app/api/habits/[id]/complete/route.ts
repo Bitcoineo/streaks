@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod/v4";
-import { getRequiredSession, unauthorized } from "@/src/lib/auth-helpers";
+import { getRequiredSession, unauthorized, validateBody } from "@/src/lib/auth-helpers";
 import { toggleCompletion } from "@/src/lib/completions";
 
 const completeSchema = z.object({
@@ -14,20 +14,13 @@ export async function POST(
   const session = await getRequiredSession();
   if (!session) return unauthorized();
 
-  const body = await request.json();
-  const parsed = completeSchema.safeParse(body);
-
-  if (!parsed.success) {
-    return NextResponse.json(
-      { error: "Validation failed", details: parsed.error.flatten().fieldErrors },
-      { status: 400 }
-    );
-  }
+  const data = await validateBody(request, completeSchema);
+  if (data instanceof NextResponse) return data;
 
   const result = await toggleCompletion(
     session.user.id,
     params.id,
-    parsed.data.date
+    data.date
   );
 
   if (result.error) {

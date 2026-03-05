@@ -2,16 +2,7 @@ import { eq, and, asc, desc, gte } from "drizzle-orm";
 import { db } from "@/src/db";
 import { completions } from "@/src/db/schema";
 import { getHabits } from "./habits";
-
-function toISODate(date: Date): string {
-  return date.toISOString().split("T")[0];
-}
-
-function addDays(date: Date, days: number): Date {
-  const d = new Date(date);
-  d.setDate(d.getDate() + days);
-  return d;
-}
+import { toISODate, addDays } from "./date-utils";
 
 export async function getCurrentStreak(
   userId: string,

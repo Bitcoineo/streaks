@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod/v4";
-import { getRequiredSession, unauthorized } from "@/src/lib/auth-helpers";
+import { getRequiredSession, unauthorized, validateBody } from "@/src/lib/auth-helpers";
 import { updateHabit, archiveHabit } from "@/src/lib/habits";
 
 const updateHabitSchema = z.object({
@@ -16,17 +16,10 @@ export async function PUT(
   const session = await getRequiredSession();
   if (!session) return unauthorized();
 
-  const body = await request.json();
-  const parsed = updateHabitSchema.safeParse(body);
+  const data = await validateBody(request, updateHabitSchema);
+  if (data instanceof NextResponse) return data;
 
-  if (!parsed.success) {
-    return NextResponse.json(
-      { error: "Validation failed", details: parsed.error.flatten().fieldErrors },
-      { status: 400 }
-    );
-  }
-
-  const result = await updateHabit(session.user.id, params.id, parsed.data);
+  const result = await updateHabit(session.user.id, params.id, data);
 
   if (result.error) {
     return NextResponse.json({ error: result.error }, { status: 404 });

@@ -1,8 +1,7 @@
 import { eq, and, asc } from "drizzle-orm";
 import { db } from "@/src/db";
 import { habits } from "@/src/db/schema";
-
-type Result<T> = { data: T; error?: never } | { data?: never; error: string };
+import type { Result } from "./types";
 
 export async function createHabit(
   userId: string,
